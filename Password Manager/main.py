@@ -1,7 +1,6 @@
 import os
 import sys, traceback
 
-
 def main():
     print('''
 \033[32m	  
@@ -40,10 +39,12 @@ ________________________________________________________________________________
 
 def create_profil():
     # Création variable "profile" et demande le mot de passe
-    profile = input("Entrez le nom du profile : ")
-    pswd_profil = input("Veuillez entrer le mot de passe du profile : ")
-    pswd_lenght = len(pswd_profil)
-    print("Votre mot de passe fait ", pswd_lenght, " caractères")
+    profile.append input("Entrez le nom du profile : ")
+
+
+def choisir_profil():
+    # Choisir un profile dans la liste
+
 
 
 if __name__ == "__main__":
