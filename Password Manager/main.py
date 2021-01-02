@@ -1,6 +1,10 @@
 import os
 import sys, traceback
 
+# Variables :
+profile = []
+
+
 def main():
     print('''
 \033[32m	  
@@ -31,7 +35,7 @@ ________________________________________________________________________________
     print("1) Créer un profile")
     print("2) Choisir un profile")
     print("3) Générer un mot de passe")
-    main_navigation = int(input(">"))
+    main_navigation = int(input("> "))
 
     if main_navigation == 1:
         create_profil()
@@ -39,12 +43,8 @@ ________________________________________________________________________________
 
 def create_profil():
     # Création variable "profile" et demande le mot de passe
-    profile.append input("Entrez le nom du profile : ")
-
-
-def choisir_profil():
-    # Choisir un profile dans la liste
-
+    new_profile = input("Nouveau profile > ")
+    profile_len = len(profile)
 
 
 if __name__ == "__main__":
