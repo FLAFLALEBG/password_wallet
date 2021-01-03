@@ -33,6 +33,7 @@ ________________________________________________________________________________
     8888     ,88'   .888888888. `88888.        8 8888       8 8888        8 8 8888         8 8888   `8b.    8 8888 8         `Y8o.`     8888     ,88'   |/\|                  
      `8888888P'    .8'       `8. `88888.       8 8888       8 8888        8 8 888888888888 8 8888     `88.  8 8888 8            `Yo      `8888888P'     |/\|                  \033[31m
 ________________________________________________________________________________________________________________________________________________________|/\|
+\033[39m
 ''')
     menu()
 
@@ -49,6 +50,12 @@ def menu():
 
     if main_navigation == 2:
         choose_profil()
+
+    if main_navigation == 3:
+        generate_password()
+
+    if main_navigation == 4:
+        verify_password()
 
 
 def create_profil():
@@ -70,7 +77,7 @@ def choose_profil():
     print("2)", profil[1])
     print("3)", profil[2])
     print("4)", profil[3])
-    print("5)", profil[4]) 
+    print("5)", profil[4])
 
 
 def delete_profil():
@@ -83,6 +90,27 @@ def delete_profil():
     print("5)", profil[4])
     del_profil_number = int(input("> "))
     del profil[del_profil_number]
+
+
+def generate_password():
+    print("Generate password :", )
+
+
+def verify_password():
+    user_password = input("Saisissez le mot de passe : ")
+    often_hacked = pwnedpasswords.check(user_password)
+
+    if often_hacked == 0:
+        print(f"Bonne nouvelle - aucun pwnage trouvé pour le mot de passe {user_password} !")
+        print("By 'haveibeenpwned.com'")
+
+    elif often_hacked > 0:
+        print(f"Oh non Ce mot de passe a déjà été vu {often_hacked} fois")
+        print("Ce mot de passe est apparu précédemment lors d'une violation de données et ne doit jamais être utilisé. "
+              "Si vous l'avez déjà utilisé quelque part, changez-le !")
+        print("By 'haveibeenpwned.com'")
+
+    menu()
 
 
 if __name__ == "__main__":
